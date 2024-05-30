@@ -13,7 +13,7 @@ export class DesignService {
   ){}
 
   async create(createDesignDto: CreateDesignDto): Promise<Design> {
-    const design = this.designRepo.create({ ...createDesignDto })
+    const design = this.designRepo.create({ ...createDesignDto });
     return await this.designRepo.save(design);
   }
 

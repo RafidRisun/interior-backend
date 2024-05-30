@@ -49,4 +49,11 @@ export class Client {
 
     @Column({ type: 'date' })
     date: Date;
+
+    @Column({
+        type: 'enum',
+        enum: ['yes', 'no'],
+        default: 'no'
+      })
+    status: string;
 }

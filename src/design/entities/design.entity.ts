@@ -23,9 +23,9 @@ export class Design {
     @Column('float')
     rate: number;
 
-    @Column()
-    image: string;
+    // @Column()
+    // image: string;
 
-    @Column({ type: 'date' })
-    date: Date;
+    // @Column({ type: 'date' })
+    // date: Date;
 }

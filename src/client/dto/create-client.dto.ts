@@ -1,4 +1,4 @@
-import { IsNotEmpty } from "class-validator";
+import { IsIn, IsNotEmpty, IsOptional } from "class-validator";
 
 export class CreateClientDto {
 
@@ -40,4 +40,8 @@ export class CreateClientDto {
     walls: number;
 
     cost: number;
+
+    @IsOptional()
+    @IsIn(['yes', 'no'])
+    status: string = 'no';
 }

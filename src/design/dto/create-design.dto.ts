@@ -1,7 +1,7 @@
 import { IsNotEmpty } from "class-validator";
 
 export class CreateDesignDto {
-    
+
     @IsNotEmpty()
     title: string;
 
@@ -20,6 +20,9 @@ export class CreateDesignDto {
     @IsNotEmpty()
     rate: number;
 
-    @IsNotEmpty()
-    image: string;
+    // @IsNotEmpty()
+    // image: string;
+
+    // date: Date;
+    
 }
