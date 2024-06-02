@@ -40,6 +40,4 @@ export class UpdateClientDto {
     walls: number;
 
     cost: number;
-
-    status: string;
 }

@@ -56,4 +56,7 @@ export class Client {
         default: 'no'
       })
     status: string;
+
+    @Column()
+    admin: string;
 }

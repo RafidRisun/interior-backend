@@ -40,8 +40,4 @@ export class CreateClientDto {
     walls: number;
 
     cost: number;
-
-    @IsOptional()
-    @IsIn(['yes', 'no'])
-    status: string = 'no';
 }

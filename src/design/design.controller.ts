@@ -1,13 +1,18 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
 import { DesignService } from './design.service';
 import { CreateDesignDto } from './dto/create-design.dto';
 import { UpdateDesignDto } from './dto/update-design.dto';
+import { AuthguardGuard } from 'src/authguard/authguard.guard';
+
 
 @Controller('design')
 export class DesignController {
-  constructor(private readonly designService: DesignService) {}
+  constructor(
+    private readonly designService: DesignService
+  ) {}
 
   @Post()
+  @UseGuards(AuthguardGuard)
   create(@Body() createDesignDto: CreateDesignDto) {
     return this.designService.create(createDesignDto);
   }
@@ -38,11 +43,13 @@ export class DesignController {
   }
 
   @Patch(':id')
+  @UseGuards(AuthguardGuard)
   update(@Param('id') id: string, @Body() updateDesignDto: UpdateDesignDto) {
     return this.designService.update(+id, updateDesignDto);
   }
 
   @Delete(':id')
+  @UseGuards(AuthguardGuard)
   remove(@Param('id') id: string) {
     return this.designService.remove(+id);
   }
